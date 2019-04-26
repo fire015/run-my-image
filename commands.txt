@@ -1,0 +1,7 @@
+docker run -it --rm --net container:vouchercodes_app_1 nicolaka/netshoot tcpdump -n 'src host 172.19.0.4 and tcp[13] & 8 != 0'
+
+kubectl cp app/run_kubernetes.py default/runner-89v9n:/usr/src/app/run_kubernetes.py && kubectl exec -it runner-89v9n python main.py
+
+kubectl cp app/monitor.py default/runner-89v9n:/usr/src/app/monitor.py && kubectl exec -it runner-89v9n python main.py
+
+kubectl exec -it runner-89v9n python main.py
